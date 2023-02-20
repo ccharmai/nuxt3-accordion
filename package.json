@@ -1,0 +1,58 @@
+{
+  "name": "@ccharmai/nuxt3-accordion",
+  "version": "1.0.0",
+  "description": "Nuxt 3 accordion module ",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "release": "npm run lint && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.2.2"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/module-builder": "^0.2.1",
+    "@nuxt/schema": "^3.2.2",
+    "@nuxt/test-utils": "^3.2.2",
+    "changelogen": "^0.4.1",
+    "eslint": "^8.34.0",
+    "nuxt": "^3.2.2",
+    "sass": "^1.58.3",
+    "vitest": "^0.28.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccharmai/nuxt3-accordion.git"
+  },
+  "keywords": [
+    "nuxt",
+    "nuxt3",
+    "accordion",
+    "slide-up-down"
+  ],
+  "author": "ccharmai",
+  "bugs": {
+    "url": "https://github.com/ccharmai/nuxt3-accordion/issues"
+  },
+  "homepage": "https://github.com/ccharmai/nuxt3-accordion#readme"
+}
